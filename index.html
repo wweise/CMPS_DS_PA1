@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Assignment</title>
+</head>
+<body>
+  <h1>See Console!</h1>
+
+  <script>
+    console.log("Setting up the environment");
+    console.log("JavaScript basics");
+    var greeting = "Hello World!";
+    console.log(greeting);
+    alert(greeting);
+    var myVariable = "global";
+    var myOtherVariable = "global";
+    function myFunction() {
+      var myVariable = "local";
+      return myVariable;
+    }
+    function myOtherFunction() {
+      myOtherVariable = "local";
+      return myOtherVariable;
+    }
+    console.log(myVariable);
+    console.log(myFunction());
+    console.log(myOtherVariable);
+    console.log(myOtherFunction());
+    console.log(myOtherVariable);
+    console.log(10 & 5);
+    console.log(10 & 6);
+    console.log(5 == "5");
+    console.log(5 === "5");
+    console.log("Control structures");
+    var year = 2016;
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+      console.log(year + " is a leap year");
+    }
+    var n = 10;
+    var factorial = 1;
+    for (var i = 1; i <= n; i++) {
+      factorial *= i;
+    }
+    console.log(n + "! = " + factorial);
+    console.log("Functions");
+    function checkForNumber(arr, num) {
+      return arr[0] === num || arr[arr.length - 1] === num;
+    }
+    console.log(checkForNumber([4, 2, 5, 3], 4) === true);
+    console.log(checkForNumber([4, 2, 5, 3], 3) === true);
+    console.log(checkForNumber([4, 2, 5, 3], 2) === false);
+    console.log(checkForNumber([4, 2, 5, 3], 13) === false);
+    console.log("Object-oriented programming in JavaScript");
+    function Triangle(side) {
+      this.side = side;
+    }
+    Triangle.prototype.getCircumference = function() {
+      return this.side * 3;
+    };
+    Triangle.prototype.getArea = function() {
+      var height = (Math.sqrt(3) / 2) * this.side;
+      return (this.side * height) / 2;
+    };
+    var triangle = new Triangle(5);
+    console.log("The circumference for the triangle is " + triangle.getCircumference());
+    console.log("The area for the triangle is " + triangle.getArea());
+    console.log("Debugging and tools");
+    console.log("Why should we use arrays");
+    var day1 = 60, day2 = 62, day3 = 58, day4 = 64, day5 = 61;
+    var avg1 = (day1 + day2 + day3 + day4 + day5) / 5;
+    console.log("Average temp (individual vars): " + avg1);
+    var temps = [60, 62, 58, 64, 61];
+    var sum = 0;
+    for (var i = 0; i < temps.length; i++) {
+      sum += temps[i];
+    }
+    var avg2 = sum / temps.length;
+    console.log("Average temp (array): " + avg2);
+    console.log("Creating and initializing arrays");
+    var daysOfWeek1 = new Array();
+    var daysOfWeek2 = new Array(7);
+    var daysOfWeek3 = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+    var daysOfWeek4 = [];
+    var daysOfWeek5 = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    console.log(daysOfWeek1.length);
+    console.log(daysOfWeek2.length);
+    console.log(daysOfWeek3.length);
+    console.log(daysOfWeek4.length);
+    console.log(daysOfWeek5.length);
+    var single = [7];
+    var pair = [7, 8];
+    var fib = [0, 1];
+    for (var i = 2; i < 25; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    console.log(fib);
+    console.log("Adding elements");
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    arr.push(10);
+    arr.unshift(0);
+    console.log(arr);
+    console.log("New length: " + arr.length);
+    console.log("Removing elements");
+    arr.pop();
+    arr.shift();
+    console.log(arr);
+    console.log("Adding and removing elements from a specific position");
+    var removed = arr.slice(1, arr.length - 1);
+    arr = [arr[0], arr[arr.length - 1]];
+    console.log(arr);
+    arr.splice(1, 0, ...removed);
+    console.log(arr);
+    console.log("Two-dimensional and multidimensional arrays");
+    var arr2D = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    var total = 0;
+    for (var i = 0; i < arr2D.length; i++) {
+      for (var j = 0; j < arr2D[i].length; j++) {
+        total += arr2D[i][j];
+      }
+    }
+    console.log("Sum of 2D array: " + total);
+    console.log("References for JavaScript array methods");
+    var zero = 0;
+    var positiveNumbers = [1, 2, 3];
+    var negativeNumbers = [-3, -2, -1];
+    var numbers = [zero, ...negativeNumbers, ...positiveNumbers];
+    console.log(numbers);
+    console.log(numbers.every(num => num < 10));
+    var nonNeg = numbers.filter(num => num >= 0);
+    console.log(nonNeg);
+    var squared = numbers.map(num => num * num);
+    console.log(squared);
+  </script>
+</body>
+</html>
